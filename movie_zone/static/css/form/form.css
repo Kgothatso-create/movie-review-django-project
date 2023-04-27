@@ -1,0 +1,25 @@
+/* Style for form container */
+.form-container {
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #f8f8f8; 
+    border: 1px solid #ccc; 
+}
+
+/* Style for form inputs */
+.form-control {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+/* Style for form help text */
+.help-text {
+    font-size: 12px;
+    color: #777; 
+    margin-top: 5px; 
+}

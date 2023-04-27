@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importing bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+
+    <!-- The link tag links the HTML file to a CSS file for styling -->
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style(login).css' %}"
+      type="text/css"
+    />
+
+    <title>moviezonelogin</title>
+  </head>
+
+  <body>
+    <!-- logo section-->
+    <section id="logo">
+      <div class="row">
+        <!-- logo -->
+        <h1>Movie zone</h1>
+      </div>
+    </section>
+
+    <section id="navbar">
+      <div class="navigation-bar">
+        <!-- Your navigation bar content here -->
+        <nav>
+          <p>Welcome to Movie Zone your movie review website Please Login or Register</p>
+        </nav>
+      </div>
+    </section>
+
+    <section id="messages">
+      <!-- Container for the message -->
+      <div class="container2">
+        <!-- If there are any messages -->
+        {% if messages %}
+
+        <!-- Loop through each message -->
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">{{message}}</div>
+        {% endfor %} {% endif %}
+      </div>
+    </section>
+
+    <!-- Container for the form -->
+    <section id="form">
+      <!-- Login form with post method to submit data -->
+      <form method="post">
+        <!-- Include CSRF token for security -->
+        {% csrf_token %}
+
+        <label for="username">Username:</label>
+
+        <!-- Input field for username with required attribute -->
+        <input type="text" name="username" required />
+        <br /><br />
+
+        <label for="password">Password:</label>
+        <!-- Input field for password with required attribute -->
+        <input type="password" name="password" required />
+
+        <br /><br />
+        <!-- Submit button for login form -->
+        <input type="submit" value="Login" />
+      </form>
+    </section>
+
+    <section id="register">
+      <!-- Link to register page with a button -->
+      <a href="http://127.0.0.1:8000/register/"
+        ><button>Register</button></a
+      >
+      <div class="register"></div>
+    </section>
+
+    <section id="footer">
+      <p>
+        By logging into the webpage, you agree to create an account with
+        accurate and complete information. You are responsible for maintaining
+        the confidentiality of your account credentials. You are granted a
+        limited license to access and use the webpage for personal,
+        non-commercial purposes only. Any unauthorized use of the webpage is
+        strictly prohibited.
+      </p>
+    </section>
+
+    <section id="pictures">
+      <div class="container">
+        <!-- Create a row div to hold the columns -->
+        <div class="row">
+          <!-- Create 8 column divs within the row -->
+          <div class="col-md-1 ">
+            <!-- Content for the first column -->
+            <img src="{% static 'css/images9/thor1.jpg' %}"alt="Movie poster"/>
+          </div>
+          <div class="col-md-1">
+            <!-- Content for the second column -->
+            <img src="{% static 'css/images8/shazam4.jpg' %}" alt="Movie poster"/>
+          </div>
+          <div class="col-md-1">
+            <!-- Content for the third column -->
+            <img src="{% static 'css/images1/avengers_endgame4.jpg' %}" alt="Movie poster"/>
+          </div>
+          <div class="col-md-1">
+            <!-- Content for the fourth column -->
+            <img src="{% static 'css/images3/panther1.jpg' %}" alt="Movie poster"/>
+          </div>
+          <div class="col-md-1">
+            <!-- Content for the fifth column -->
+            <img src="{% static 'css/images4/wonder2.jpg' %}" alt="Movie poster" />
+          </div>
+          <div class="col-md-1">
+            <!-- Content for the sixth column -->
+            <img src="{% static 'css/images5/spider2.jpg' %}" alt="Movie poster"/>
+          </div>
+          <div class="col-md-1">
+            <!-- Content for the seventh column -->
+            <img src="{% static 'css/images6/aqua1.jpg' %}" alt="Movie poster"/>
+          </div>
+          <div class="col-md-1">
+            <!-- Content for the eighth column -->
+            <img src="{% static 'css/images7/guard2.jpg' %}" alt="Movie poster" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

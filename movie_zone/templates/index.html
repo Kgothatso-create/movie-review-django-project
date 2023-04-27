@@ -1,0 +1,567 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importing bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+
+    <!-- The link tag links the HTML file to a CSS file for styling -->
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style(index).css' %}"
+      type="text/css"
+    />
+
+    <title>moviezone</title>
+  </head>
+  <body>
+    <section id="logo">
+      <div class="row">
+        <!-- logo -->
+        <h1>Movie zone</h1>
+      </div>
+    </section>
+
+    <section id="navbar">
+      <div class="navigation-bar">
+        <!-- navigation bar content here -->
+        <nav>
+          <a href="#about_us"> about us </a>
+          <a href="#footer">Terms and conditions </a>
+          <a href="http://127.0.0.1:8000/poll/"> Movie poll</a>
+          <a href="http://127.0.0.1:8000/movie_chat/"> chats and messages</a>
+          <a href="http://127.0.0.1:8000/logout">Logout</a>
+        </nav>
+      </div>
+    </section>
+
+    <section id="messages">
+      <!-- Container for the form -->
+      <div class="container">
+        <!-- If there are any messages -->
+        {% if messages %}
+
+        <!-- Loop through each message -->
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">{{message}}</div>
+        {% endfor %} {% endif %}
+      </div>
+    </section>
+
+    <!-- About the website -->
+    <section id="about_us">
+      <h5>About Us</h5>
+      <p>
+        Welcome to Movie Zone! Our website was created with the aim of
+        collecting and analyzing the opinions of movie enthusiasts to determine
+        the popularity of movies from two major studios. With more comparisons
+        to come we start with two major comic book universes: DC and Marvel. We
+        are passionate about movies and love exploring the world of superheroes
+        and their adventures on the big screen. Our platform provides a space
+        for fans to share their thoughts, insights, and preferences on various
+        DC and Marvel movies through polls, surveys, and discussions. Through
+        the valuable input of our users, we strive to provide insights and
+        data-driven analysis on which movies are more popular within the DC and
+        Marvel franchises. Join us in this exciting journey of exploring the
+        world of superheroes and discovering the preferences of movie fans!
+      </p>
+    </section>
+
+    <section id="movies_on_review">
+      <!-- Movie posters and information -->
+      <div class="posters">
+        <!-- The Thor: Ragnarok (Marvel)  movie-->
+        <div class="row">
+          <h2>Thor: Ragnarok</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images9/thor1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images9/thor2.jpeg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images9/thor3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images9/thor4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Thor: Ragnarok, released in 2017 and directed by Taika Waititi, is a
+            visually stunning and comedic superhero film that takes Thor, played
+            by Chris Hemsworth, on a thrilling adventure. As the Asgardian god
+            of thunder, Thor faces the prophecy of Ragnarok, the destruction of
+            Asgard, and must prevent it from coming to fruition. Along the way,
+            Thor teams up with his mischievous brother Loki, portrayed by Tom
+            Hiddleston, and a new ally, Valkyrie, played by Tessa Thompson, to
+            defeat the powerful Hela, played by Cate Blanchett, who seeks to
+            unleash destruction upon Asgard. With its vibrant visual effects,
+            quirky humor, and unique style, Thor: Ragnarok stands out from
+            previous Thor films with its lighter tone and self-awareness,
+            injecting a fresh energy into the franchise. The film's blend of
+            action, comedy, and epic battles, along with its memorable
+            characters and charismatic performances, has made it a fan-favorite
+            in the Marvel Cinematic Universe.
+          </p>
+        </div>
+
+        <!-- The Shazam! (DC)  movie-->
+        <div class="row">
+          <h2>Shazam!</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images8/shazam1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images8/shazam2.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images8/shazam3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images8/shazam4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Shazam!, released in 2019 and directed by David F. Sandberg, is a
+            lighthearted and comedic superhero film that tells the story of
+            young Billy Batson, played by Asher Angel, who gains the ability to
+            transform into an adult superhero named Shazam, portrayed by Zachary
+            Levi. As Billy navigates his newfound powers, he must learn to wield
+            them responsibly and face off against the nefarious Dr. Thaddeus
+            Sivana, played by Mark Strong. With the help of his foster family,
+            including Freddy Freeman, played by Jack Dylan Grazer, Billy
+            discovers the true meaning of family and heroism. Shazam! stands out
+            with its humor, heart, and playful tone, capturing the essence of a
+            teenage boy's wish fulfillment to become a superhero. With its blend
+            of action, comedy, and heartwarming moments, Shazam! has been
+            praised for its refreshing take on the superhero genre and its
+            celebration of family bonds and the power of friendship.
+          </p>
+        </div>
+
+        <!-- The avengers movie-->
+        <div class="row">
+          <h2>Avengers: Endgame</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images1/avengers_endgame4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images1/avengers_endgame2.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images1/avengers_endgame3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images1/avengers_endgame1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Avengers: Endgame is a 2019 blockbuster superhero film that serves
+            as the epic conclusion to the Marvel Cinematic Universe's Infinity
+            Saga. Following the devastating events of Avengers: Infinity War,
+            the remaining Avengers, along with new allies, embark on a desperate
+            mission to reverse the destruction caused by the villain Thanos, who
+            wiped out half of all living beings in the universe. The film
+            features an ensemble of beloved superheroes, including Iron Man,
+            Captain America, Thor, Hulk, Black Widow, Hawkeye, Ant-Man, and
+            Captain Marvel, as they travel back in time, revisit key moments
+            from previous Marvel films, and confront their own past selves. With
+            high-stakes action, heart-wrenching moments, and unexpected twists,
+            Avengers: Endgame is a visual spectacle that blends intense action
+            sequences with emotional storytelling, providing a satisfying
+            conclusion to over a decade of interconnected Marvel films. The
+            film's stellar cast, stunning visual effects, and epic scale make it
+            a must-watch for superhero fans and a cinematic event that left
+            audiences on the edge of their seats until the very end.
+          </p>
+        </div>
+
+        <!-- The Dark knight movie-->
+        <div class="row">
+          <h2>The Dark knight</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images2/the_dark1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images2/the_dark2.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images2/the_dark3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images2/the_dark4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            The Dark Knight, released in 2008, is a critically acclaimed
+            superhero film directed by Christopher Nolan. The film presents a
+            gritty and realistic take on the iconic character of Batman, played
+            by Christian Bale. Set in Gotham City, the story follows Batman as
+            he faces one of his greatest adversaries, the Joker, portrayed by
+            Heath Ledger in a captivating performance. As the Joker creates
+            chaos and terrorizes the city, Batman must grapple with moral
+            dilemmas and make tough choices. The film features a stellar cast
+            including Michael Caine as Alfred, Gary Oldman as Commissioner
+            Gordon, Aaron Eckhart as Harvey Dent, and Maggie Gyllenhaal as
+            Rachel Dawes. With its gripping storyline, intense action sequences,
+            and Heath Ledger's unforgettable portrayal of the Joker, The Dark
+            Knight is a masterpiece that has left a lasting impact on audiences
+            and is often regarded as one of the best superhero films of all
+            time.
+          </p>
+        </div>
+
+        <!-- The Black Panther movie-->
+        <div class="row">
+          <h2>The Black Panther</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images3/panther3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images3/panther1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images3/panther2.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images3/panther4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Black Panther, released in 2018, is a groundbreaking superhero film
+            directed by Ryan Coogler. It brings to life the fictional African
+            nation of Wakanda, a technologically advanced society hidden from
+            the world. Chadwick Boseman stars as T'Challa, the Black Panther and
+            newly crowned king of Wakanda, who must navigate the challenges of
+            leadership and protect his nation from internal and external
+            threats. The film boasts a talented and diverse cast, including
+            Michael B. Jordan as the complex and compelling antagonist, Erik
+            Killmonger, Lupita Nyong'o as Nakia, Danai Gurira as Okoye, and
+            Letitia Wright as Shuri, T'Challa's sister and Wakanda's brilliant
+            innovator. With its rich cultural representation, stunning visuals,
+            and themes of heritage, identity, and social responsibility, Black
+            Panther is more than just a superhero film; it's a cultural
+            phenomenon that has made a significant impact on the representation
+            of Black heroes in mainstream media and has been celebrated for its
+            groundbreaking achievements in storytelling and representation.
+          </p>
+        </div>
+
+        <!-- The Wonder Woman  movie-->
+        <div class="row">
+          <h2>Wonder Woman</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images4/wonder1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images4/wonder2.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images4/wonder3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images4/wonder4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Wonder Woman, released in 2017 and directed by Patty Jenkins, is an
+            empowering superhero film that tells the origin story of Diana
+            Prince, also known as Wonder Woman. Gal Gadot stars as the Amazonian
+            warrior princess who leaves her hidden island of Themyscira to stop
+            the horrors of World War I. With her superhuman abilities, fierce
+            combat skills, and unwavering compassion, Wonder Woman becomes a
+            symbol of hope and strength as she fights against evil forces and
+            discovers her true destiny. The film is lauded for its female-led
+            cast and crew, and it's celebrated as a landmark in the
+            representation of women in superhero films. With its compelling
+            story, thrilling action sequences, and powerful messages of love,
+            courage, and justice, Wonder Woman has captivated audiences
+            worldwide and has become an iconic entry in the superhero genre.
+          </p>
+        </div>
+
+        <!-- The Spider-Man: No Way Home (Marvel)  movie-->
+        <div class="row">
+          <h2>Spider-Man: No Way Home</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images5/spider1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images5/spider2.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images5/spider3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images5/spider4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Spider-Man: No Way Home, set to release in 2021, is a highly
+            anticipated superhero film directed by Jon Watts. The film is the
+            third installment in the Spider-Man franchise starring Tom Holland
+            as Peter Parker/Spider-Man. As the plot details are kept tightly
+            under wraps, the film's teaser trailers have generated immense
+            excitement among fans. Speculations abound about multiverse
+            crossovers and appearances of beloved characters from previous
+            Spider-Man films. As Peter Parker faces new challenges and confronts
+            powerful foes, he must find a way to save his loved ones and protect
+            his city. With its intriguing premise, beloved characters, and
+            breathtaking action sequences, Spider-Man: No Way Home is expected
+            to be an epic addition to the Spider-Man franchise and a must-watch
+            for superhero fans around the world.
+          </p>
+        </div>
+
+        <!-- The Aquaman (DC)  movie-->
+        <div class="row">
+          <h2>Aquaman</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images6/aqua4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images6/aqua1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images6/aqua2.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images6/aqua3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Aquaman, released in 2018 and directed by James Wan, is an epic
+            underwater adventure that follows the journey of Arthur Curry,
+            portrayed by Jason Momoa, as he discovers his true heritage and
+            destiny. As the son of a human lighthouse keeper and the queen of
+            Atlantis, Arthur must step forward to claim his birthright and
+            become the legendary ruler of Atlantis, known as Aquaman. Alongside
+            Mera, played by Amber Heard, Arthur embarks on a perilous quest to
+            retrieve the ancient trident of Atlantis and prevent a war between
+            the underwater kingdom and the surface world. With its visually
+            stunning underwater landscapes, breathtaking action sequences, and
+            charismatic performances, Aquaman is a visually dazzling and
+            thrilling superhero film that showcases the iconic DC Comics
+            character in all his glory.
+          </p>
+        </div>
+
+        <!-- The Guardians of the Galaxy (Marvel)  movie-->
+        <div class="row">
+          <h2>Guardians of the Galaxy</h2>
+          <div class="col-md-3">
+            <!-- Content for column 1 -->
+            <img
+              src="{% static 'css/images7/guard4.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 2 -->
+            <img
+              src="{% static 'css/images7/guard3.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 3 -->
+            <img
+              src="{% static 'css/images7/guard2.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+          <div class="col-md-3">
+            <!-- Content for column 4 -->
+            <img
+              src="{% static 'css/images7/guard1.jpg' %}"
+              alt="Movie poster"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <p>
+            Guardians of the Galaxy, released in 2014 and directed by James
+            Gunn, is a unique and irreverent superhero film that brings together
+            a ragtag group of misfits from different corners of the galaxy. Led
+            by Peter Quill, played by Chris Pratt, the group includes a
+            green-skinned assassin named Gamora, voiced by Zoe Saldana, a
+            talking raccoon called Rocket, voiced by Bradley Cooper, a tree-like
+            humanoid named Groot, voiced by Vin Diesel, and a vengeance-seeking
+            Drax the Destroyer, played by Dave Bautista. Together, they embark
+            on a high-stakes mission to save the galaxy from a powerful villain,
+            Ronan the Accuser, portrayed by Lee Pace. With its blend of humor,
+            action, and heart, Guardians of the Galaxy defies the traditional
+            superhero film formula and creates a fresh, entertaining, and
+            visually stunning space adventure that has become a fan-favorite
+            within the Marvel Cinematic Universe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div id="footer">
+        <!--  -->
+        <h5>terms and conditions</h5>
+        <p>
+          By accessing and using our website, you agree to adhere to the
+          following guidelines:The use of inappropriate language or behavior is
+          strictly prohibited and may result in termination of access.
+          Additionally, the website's admin reserves the right to restrict or
+          terminate use at their discretion.
+        </p>
+        <h5>contact us</h5>
+        <p>
+          Email: info@moviezone.com Phone: 021 123 4567 Address: 123 Main
+          Street, Cape Town, South Africa
+        </p>
+        <a href="#logo">Back to top </a>
+      </div>
+    </section>
+  </body>
+</html>

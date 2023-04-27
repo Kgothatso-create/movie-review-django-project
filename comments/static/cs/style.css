@@ -1,0 +1,63 @@
+/* Logo id style */
+#logo{
+    background-image: url("images/filmstrip.jpg");
+    background-size: contain;
+}
+
+/* body style */
+body{
+   display: flex;
+   flex-direction: column; 
+   min-height: 100vh;
+   background: black;
+}
+
+/* H1 headings style */
+h1{
+    color: white;
+    text-align: center;
+ } 
+
+ /* H2 headings style */
+ h2{
+    color: white;
+    text-align: center;
+ } 
+
+ /* H6 headings style */
+ h6{
+    color: white;
+    text-align: center;
+ } 
+
+ /* Form class style */
+ .form{
+    background-color:#CC5500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ }
+
+ /* Text class style */
+ .text{
+    background-color:#808000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ }
+
+ /* Paragraph style */
+ p{
+    color: white;
+ }
+
+ /* nav style */
+ nav{
+   padding-top: 5px;
+   padding-bottom: 5px;
+   background: rgb(0, 0, 0);
+ }
+ 
+ /* Link style */
+ a{
+   padding-left: 100px;
+   color: white;
+ }

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link
+      href=" {% static  'css/style(details).css' %} "
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>movie_zone_poll_results</title>
+  </head>
+  <body>
+    <section id="logo">
+        <div class="row">
+          <!-- logo -->
+          <h1>Movie zone</h1>
+        </div>
+      </section>
+
+      <section id="navbar">
+        <div class="navigation-bar">
+          <!-- Your navigation bar content here -->
+          <nav>
+              <p>Movie Zone Poll Results </p>
+              {% if user.is_authenticated %}
+              <a href="http://127.0.0.1:8000/index/">Home</a>
+              <a href="http://127.0.0.1:8000/poll/">Back to poll</a>
+              <a href="http://127.0.0.1:8000/movie_chat/"> chats and messages</a>
+              <a href="http://127.0.0.1:8000/logout">Logout</a>
+              
+              {% else %}
+              <!-- No login link, as only Logout button is displayed if user is authenticated -->
+              {% endif %}
+          </nav>
+        </div>
+      </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 ">
+          <!-- Left column content -->
+          <h1>{{ question.question_text }}</h1>
+
+          <ul>
+            <!-- Display question text from the question object -->
+            {% for choice in question.choice_set.all %}
+            <li class="vote">
+              <!-- Display choice text and number of votes -->
+              {{ choice.choice_text }} -- {{ choice.votes}}
+              <!-- Use pluralize filter to display "vote" or "votes" based on number of votes -->
+              vote{{choice.votes|pluralize}}
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+
+        <div class="col-md-2">
+          <!-- Right column content -->
+          <!-- Display image from static/cs3 directory -->
+         <img src="{% static 'css/images/vs.png' %}" alt=" poster">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
