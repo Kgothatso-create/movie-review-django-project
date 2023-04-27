@@ -18,7 +18,26 @@ def index(request):
 # Creating user authentication views here.
 # User register view
 def register(request):
+    """
+    A view function that handles user registration.
 
+    If the request method is 'POST', this function validates the form data,
+    checks if the username already exists in the database, and creates a new user
+    object with the given credentials. If the user is successfully registered,
+    they are redirected to the index page with a success message. If the form is
+    invalid or the registration is unsuccessful, an error message is displayed.
+    
+    If the request method is 'GET', this function instantiates a new form and renders
+    the registration page with the form.
+
+    Args:
+        request (HttpRequest): The HTTP request object sent by the user.
+
+    Returns:
+        HttpResponse: The HTTP response object containing the rendered template
+        with the form, success message, or error message, depending on the status
+        of the registration process.
+    """
     form = NewUserForm()  # Instantiate the form
     if request.method == 'POST':
 
@@ -56,6 +75,22 @@ def register(request):
 
 # User login view
 def user_login(request):
+    """
+    Logs in a user with a given username and password.
+
+    If the request method is POST, the function initializes an AuthenticationForm with request and POST data. If the form is
+    valid, it gets the username and password from the POST data and authenticates the user. If the user is authenticated,
+    the function logs in the user and redirects to the index page. If the username or password is invalid, the function
+    shows an error message. If the form is invalid, the function shows an error message.
+
+    If the request method is not POST, the function creates an instance of AuthenticationForm and renders the login.html
+    template with the request and form data.
+
+    Args:
+        request: A Django request object.
+    Returns:
+        A rendered HTML response.
+    """
      # Check if request method is POST
     if request.method == 'POST':
 
@@ -124,6 +159,24 @@ def detail(request, question_id):
 # The login_required decorator to ensure only logged-in users can access this view
 @login_required(login_url ='login')
 def vote(request, question_id):
+    """
+    View function that handles voting on a particular question.
+
+    Args:
+        request: HTTP request object containing the POST data.
+        question_id: ID of the question being voted on.
+
+    Returns:
+        HttpResponseRedirect: Redirects to the results page for the question.
+
+    Raises:
+        None.
+
+    This function retrieves the selected choice from the POST data, increments its
+    vote count, and redirects the user to the results page for the question.
+    If the user does not select a choice, it displays an error message and
+    redisplay the voting form.
+    """
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(
