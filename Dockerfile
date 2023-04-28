@@ -2,7 +2,7 @@
 FROM pypy:latest
 
 # Set the working directory
-WORKDIR  ${PWD}
+WORKDIR  /.
 
 # Copy the requirements file
 COPY requirements.txt requirements.txt
