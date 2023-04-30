@@ -1,5 +1,7 @@
 # Base image
-FROM python:3.10-slim-buster
+FROM python:3.10
+
+ENV PYTHONUNBUFFERED=1
 
 # Set the working directory
 WORKDIR /app
@@ -17,4 +19,4 @@ COPY . .
 EXPOSE 8000
 
 # Start the application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver"]
