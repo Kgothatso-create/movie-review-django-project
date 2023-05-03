@@ -37,9 +37,9 @@
         <nav>
           <a href="#about_us"> about us </a>
           <a href="#footer">Terms and conditions </a>
-          <a href="http://127.0.0.1:8000/poll/"> Movie poll</a>
-          <a href="http://127.0.0.1:8000/movie_chat/"> chats and messages</a>
-          <a href="http://127.0.0.1:8000/logout">Logout</a>
+          <a href="{% url 'poll' %}"> Movie poll</a>
+          <a href="{% url 'moviechat' %}"> chats and messages</a>
+          <a href="{% url 'logout' %}">Logout</a>
         </nav>
       </div>
     </section>
