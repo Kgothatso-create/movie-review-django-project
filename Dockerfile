@@ -7,6 +7,10 @@ WORKDIR /app
 # Copy the requirements file
 COPY requirements.txt requirements.txt
 
+RUN python -m venv myenv
+
+RUN myenv\Scripts\activate
+
 # Install the requirements
 RUN pip install -r requirements.txt
 
