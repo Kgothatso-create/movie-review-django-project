@@ -37,7 +37,7 @@
           <p>Welcome to Movie Zone Polls please choose a poll question</p>
           {% if user.is_authenticated %}
           <a href="{% url 'index' %}">Home</a>
-          <a href="{% url 'movie_chat' %}"> chats and messages</a>
+          <a href="{% url 'moviechat' %}"> chats and messages</a>
           <a href="{% url 'logout' %}">Logout</a>
           {% else %}
           <!-- No login link, as only Logout button is displayed if user is authenticated -->
