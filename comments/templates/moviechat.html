@@ -35,9 +35,9 @@
         <!-- Navigation bar content  -->
         <nav>
           
-          <a href="http://127.0.0.1:8000/index/">Home</a>
-          <a href="http://127.0.0.1:8000/poll/">Movie poll</a>
-          <a href="http://127.0.0.1:8000/logout">Logout</a>
+          <a href="{% url 'index' %}">Home</a>
+          <a href="{% url 'poll' %}">Movie poll</a>
+          <a href="{% url 'logout' %}">Logout</a>
 
         </nav>
       </div>
